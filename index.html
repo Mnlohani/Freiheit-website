@@ -166,7 +166,7 @@
         align-items: center;
         gap: 9px;
 
-        font-size: 15px;
+        font-size: 22px;
         font-weight: 650;
 
         letter-spacing: 0.04em;
@@ -548,6 +548,65 @@
         font-size: 13px;
       }
 
+      /* =====================================================
+   EVERYDAY QUESTIONS
+   ====================================================== */
+
+      .questions-section {
+        background: var(--background);
+      }
+
+      .question-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 50px;
+
+        margin-top: 55px;
+        border-top: 1px solid var(--border);
+      }
+
+      .question {
+        padding: 27px 0;
+
+        border-bottom: 1px solid var(--border);
+
+        color: var(--text);
+
+        font-size: clamp(19px, 2.2vw, 27px);
+        line-height: 1.25;
+
+        letter-spacing: -0.025em;
+      }
+
+      .question:hover {
+        color: var(--accent);
+      }
+
+      .questions-closing {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        margin-top: 55px;
+
+        font-size: 18px;
+      }
+
+      .questions-closing span {
+        color: var(--text-secondary);
+      }
+
+      @media (max-width: 700px) {
+        .question-grid {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+
+        .question {
+          font-size: 20px;
+        }
+      }
+
       /* =========================================================
        SAFETY
        ========================================================= */
@@ -635,13 +694,11 @@
 
       .final {
         min-height: 72vh;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
       }
 
       .final h2 {
@@ -652,12 +709,15 @@
         max-width: 680px;
       }
 
-      .final-butterfly {
-        margin-top: 55px;
-
-        font-size: 52px;
+      .final .actions {
+        justify-content: flex-start;
       }
 
+      .final-butterfly {
+        margin-top: 55px;
+        font-size: 52px;
+        text-align: center;
+      }
       /* =========================================================
        FOOTER
        ========================================================= */
@@ -819,7 +879,7 @@
       <a href="#top" class="brand" aria-label="Freiheit home">
         <span class="butterfly" aria-hidden="true">🦋</span>
 
-        FREIHEIT
+        Freiheit
       </a>
 
       <nav class="nav-links" aria-label="Main navigation">
@@ -869,8 +929,8 @@
             </h1>
 
             <p class="lead reveal">
-              Freiheit explores how multimodal AI can help blind and visually
-              impaired people understand the visual information around them —
+              Freiheit explores how multimodal AI can help people with blindness
+              or low visibility understand the visual information around them —
               through natural conversation.
             </p>
 
@@ -1044,6 +1104,72 @@
       </section>
 
       <!-- =====================================================
+     EVERYDAY QUESTIONS
+     ====================================================== -->
+
+      <section class="questions-section">
+        <div class="container">
+          <div class="eyebrow reveal">Everyday questions</div>
+
+          <h2 class="reveal">
+            Questions sighted people answer without thinking.
+          </h2>
+
+          <p class="lead reveal">
+            For many people, these questions are answered simply by looking.
+            Freiheit explores how that visual information could become
+            accessible through conversation.
+          </p>
+
+          <div class="question-grid">
+            <div class="question reveal">
+              “Same packaging: milk or juice in fridge?”
+            </div>
+
+            <div class="question reveal">
+              “Going out: Do these colours go together?”
+            </div>
+
+            <div class="question reveal">
+              “Allergy: Does this contain peanuts?”
+            </div>
+
+            <div class="question reveal">
+              “Shopping: What size are these trousers?”
+            </div>
+
+            <div class="question reveal">“ Is this milk 1.5% or 3.5%?”</div>
+
+            <div class="question reveal">
+              “Is this diet Coke or regular Coke?”
+            </div>
+
+            <div class="question reveal">
+              “What is the pattern on this shirt?”
+            </div>
+
+            <div class="question reveal">“Is this product on discount?”</div>
+
+            <div class="question reveal">“When does this medicine expire?”</div>
+
+            <div class="question reveal">
+              “What does this washing-machine display??”
+            </div>
+
+            <div class="question reveal">“Which platform is this?”</div>
+
+            <div class="question reveal">“Where is the exit?”</div>
+          </div>
+
+          <div class="questions-closing reveal">
+            <strong> Small questions. Everyday decisions. </strong>
+
+            <span> A large amount of visual information. </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
          DEMO / VOICE
          ====================================================== -->
 
@@ -1058,8 +1184,8 @@
 
             <div class="reveal">
               <p class="demo-statement">
-                Frei­heit combines visual understanding with conversational
-                interaction.
+                Frei­heit combines visual understanding with multi-turn
+                conversational interaction.
               </p>
 
               <div class="pill-row">
