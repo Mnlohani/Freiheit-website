@@ -411,6 +411,46 @@
 
         font-size: 13px;
       }
+      .video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.video-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+/* The card now provides the rounding and shadow */
+.video-card .video-frame {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.video-card .video-caption strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+@media (max-width: 800px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-card {
+    border-radius: 18px;
+  }
+}
 
       /* =========================================================
        ORIGIN
@@ -950,29 +990,45 @@
           <!-- First real product demo -->
 
           <div class="hero-demo reveal" id="hero-demo">
-            <div class="video-frame">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/DKLlWzGoMVk"
-                title="Freiheit Demo with Mobile"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="
-                  accelerometer;
-                  autoplay;
-                  clipboard-write;
-                  encrypted-media;
-                  gyroscope;
-                  picture-in-picture;
-                  web-share;
-                "
-                allowfullscreen
-              ></iframe>
+              <div class="video-grid">
+                <!-- Video 1: React web app with TalkBack -->
+                <figure class="video-card">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/2ETih-63-l0"
+                      title="Freiheit React web app used with a screen reader (TalkBack) on mobile"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <figcaption class="video-caption">
+                    <strong>Web app on Mobile with Android's screen reader</strong>
+                    The React-based web app used with Android's TalkBack screen reader.
+                  </figcaption>
+                </figure>
+              
+              <!-- Video 2: Freiheit on mobile -->
 
-              <div class="video-caption">
-                A working Freiheit prototype demonstrated on mobile.
+              <figure class="video-card">
+                  <div class="video-frame">
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/DKLlWzGoMVk"
+                      title="Freiheit demo: functionality running on mobile"
+                      loading="lazy"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                  <figcaption class="video-caption">
+                    <strong>Prototype on mobile showing functionalities</strong>
+                    Streamlit based prototype on mobile showing functionalities such as preserving context
+                  </figcaption>
+                </figure>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
